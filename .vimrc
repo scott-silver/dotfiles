@@ -20,6 +20,7 @@ Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'SirVer/ultisnips'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
 
 " Ultisnips configuration. Must remain before vundle#end
 let g:UltiSnipsExpandTrigger="<tab>"
