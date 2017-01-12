@@ -43,8 +43,9 @@ set updatetime=250
 " colorscheme gruvbox
 set background=dark
 highlight FoldColumn guifg='#282828' guibg='#282828'
+" add light gray color column from line 101 on
 hi ColorColumn ctermbg='235'
-let &colorcolumn=join(range(101,999),",") " add light gray color column from line 101 on
+let &colorcolumn=join(range(101,999),",")
 
 " --------------------------------------------------------------------------------------------------
 " Appearance
@@ -86,8 +87,7 @@ set shiftwidth=2 " size of an "indent"
 set softtabstop=2 " insert mode tab and backspace use 2 spaces
 set tabstop=2 " size of a hard tabstop
 " don't comment out new lines automatically when leaving a commented-out line
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r
-" formatoptions-=o
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 "--------------------------------------------------------------------------------------------------
 " File Options
@@ -116,7 +116,7 @@ let mapleader = ',' " use ',' as <leader> key
 " ,, to go to last file
 map <leader><leader> <c-^>
 " toggle NERDTree
-map ntc :NERDTreeToggle<cr>
+map nt :NERDTreeToggle<cr>
 
 " --------------------------------------------------------------------------------------------------
 " Custom Functions
@@ -125,14 +125,22 @@ map ntc :NERDTreeToggle<cr>
 " trim trailing whitespace
 fun! TrimWhitespace()
   let l:save_cursor = getpos('.')
-    %s/\s\+$//e
-      call setpos('.', l:save_cursor)
-      endfun
-      " call TrimWhiteSpace on file write
-      autocmd BufWritePre * :call TrimWhitespace()
+  %s/\s\+$//e
+  call setpos('.', l:save_cursor)
+endfun
+" call TrimWhiteSpace on file write
+autocmd BufWritePre * :call TrimWhitespace()
 
-" --------------------------------------------------------------------------------------------------
-" Notes
-" --------------------------------------------------------------------------------------------------
-
-" to reset netrw working directory: :Ntree [directory name] to reset netrw directory
+" borrowed from gary bernhardt
+function! RemoveFancyCharacters()
+    let typo = {}
+    let typo["“"] = '"'
+    let typo["”"] = '"'
+    let typo["‘"] = "'"
+    let typo["’"] = "'"
+    let typo["–"] = '--'
+    let typo["—"] = '---'
+    let typo["…"] = '...'
+    :exe ":%s/".join(keys(typo), '\|').'/\=typo[submatch(0)]/ge'
+endfunction
+command! RemoveFancyCharacters :call RemoveFancyCharacters()
