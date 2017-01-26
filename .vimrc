@@ -23,8 +23,9 @@ call vundle#end() " required
 filetype plugin indent on
 
 " Command-T configuration
-let g:CommandTTraverseSCM = 'pwd' " set file directory to present working directory (default setting
-" looks for a git directory, which causes issues when working in large, shared repos (GO repo)
+let g:CommandTTraverseSCM = 'pwd' " set file directory to present working
+" directory (default setting looks for a git directory, which causes issues
+" when working in large, shared repos
 
 " Gitgutter. Reduce updatetime so that git-gutter moves faster
 set updatetime=250
@@ -54,10 +55,14 @@ set number " show line numbers
 set ruler " show where you are
 set scrolloff=3 " show context above/below cursorline
 set showtabline=2
+set fillchars+=vert:\ " remove char from split bar (note significant whitespace)
+" GRB: Put useful info in status line
+:set statusline=%<%f%=\ [%1*%M%*%n%R%H]\ %-19(%3l,%02c%03V%)%O'%02b'
+:hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red
 
-" --------------------------------------------------------------------------------------------------
+" ------------------------------------------------------------------------------
 " Bells/Alerts
-" --------------------------------------------------------------------------------------------------
+" ------------------------------------------------------------------------------
 
 " disable noises
 " http://stackoverflow.com/questions/16047146/disable-bell-in-macvim
@@ -66,9 +71,9 @@ set novisualbell
 set t_vb=
 autocmd! GUIEnter * set vb t_vb=
 
-" --------------------------------------------------------------------------------------------------
+" ------------------------------------------------------------------------------
 " Editing Options
-" --------------------------------------------------------------------------------------------------
+" ------------------------------------------------------------------------------
 
 set autoindent
 set backspace=2 " Fix broken backspace in some setups
@@ -81,9 +86,9 @@ set tabstop=2 " size of a hard tabstop
 " don't comment out new lines automatically when leaving a commented-out line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-"--------------------------------------------------------------------------------------------------
+"-------------------------------------------------------------------------------
 " File Options
-"--------------------------------------------------------------------------------------------------
+"-------------------------------------------------------------------------------
 
 set encoding=utf-8
 set autoread " reload files when changed on disk, i.e. via `git checkout`
@@ -100,19 +105,20 @@ set wildignore+=**/node_modules " ignores node_modules
 set wildmenu
 set wildmode=longest,list,full
 
-"--------------------------------------------------------------------------------------------------
+"-------------------------------------------------------------------------------
 " Custom Key Mappings
-" --------------------------------------------------------------------------------------------------
+" ------------------------------------------------------------------------------
 
 let mapleader = ',' " use ',' as <leader> key
 " ,, to go to last file
-map <leader><leader> <c-^>
-" toggle NERDTree
-map nt :NERDTreeToggle<cr>
 
-" --------------------------------------------------------------------------------------------------
+" GRB: use hlsearch, but clear the search buffer when hitting return
+set hlsearch
+:nnoremap <CR> :nohlsearch<CR>/<BS>
+
+" ------------------------------------------------------------------------------
 " Custom Functions
-" --------------------------------------------------------------------------------------------------
+" ------------------------------------------------------------------------------
 
 " trim trailing whitespace
 fun! TrimWhitespace()
