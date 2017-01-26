@@ -29,20 +29,19 @@ let g:CommandTTraverseSCM = 'pwd' " set file directory to present working direct
 " Gitgutter. Reduce updatetime so that git-gutter moves faster
 set updatetime=250
 
-" --------------------------------------------------------------------------------------------------
+" ------------------------------------------------------------------------------
 " Colors
-" --------------------------------------------------------------------------------------------------
+" ------------------------------------------------------------------------------
 
-" colorscheme gruvbox
 set background=dark
 highlight FoldColumn guifg='#282828' guibg='#282828'
-" add light gray color column from line 101 on
-hi ColorColumn ctermbg='235'
-let &colorcolumn=join(range(101,999),",")
+" add light gray color column from line 81 on
+hi ColorColumn ctermbg='234'
+let &colorcolumn=join(range(81,999),",")
 
-" --------------------------------------------------------------------------------------------------
+" ------------------------------------------------------------------------------
 " Appearance
-" --------------------------------------------------------------------------------------------------
+" ------------------------------------------------------------------------------
 
 syntax enable " enable syntax highlighting
 let g:netrw_liststyle=3 " show editor in tree mode
