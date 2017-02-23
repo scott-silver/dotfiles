@@ -111,6 +111,7 @@ set wildmode=longest,list,full
 
 let mapleader = ',' " use ',' as <leader> key
 " ,, to go to last file
+map <leader><leader> <c-^>
 
 " GRB: use hlsearch, but clear the search buffer when hitting return
 set hlsearch
