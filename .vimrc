@@ -13,6 +13,7 @@ Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
 
 " Ultisnips configuration. Must remain before vundle#end
 let g:UltiSnipsExpandTrigger="<tab>"
