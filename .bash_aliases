@@ -32,6 +32,17 @@ alias gs="git status"
 alias hack='git pull'
 alias ship='git push -u origin $(git_branch)'
 
+# open github's pr site with the current repo and branch
+# http://www.devthought.com/code/create-a-github-pull-request-from-the-terminal/
+function gpr () {
+  local repo=`git remote -v | grep -m 1 "(push)" | sed -e "s/.*github.com[:/]\(.*\)\.git.*/\1/"`
+  local branch=`git name-rev --name-only HEAD`
+  echo "... creating pull request for branch \"$branch\" in \"$repo\""
+  open https://github.com/$repo/pull/new/$branch
+}
+
+export -f gpr
+
 # ==============================================================================
 # vim
 # ==============================================================================
