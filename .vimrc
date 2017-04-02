@@ -40,6 +40,8 @@ highlight FoldColumn guifg='#282828' guibg='#282828'
 " add light gray color column from line 81 on
 hi ColorColumn ctermbg='234'
 let &colorcolumn=join(range(81,999),",")
+" invert the statusline for non-focused buffers
+hi StatusLineNC ctermfg=235 ctermbg=15
 
 " ------------------------------------------------------------------------------
 " Appearance
