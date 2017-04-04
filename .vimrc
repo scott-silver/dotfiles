@@ -44,6 +44,24 @@ let &colorcolumn=join(range(81,999),",")
 hi StatusLineNC ctermfg=235 ctermbg=15
 
 " ------------------------------------------------------------------------------
+" CursorLine
+" ------------------------------------------------------------------------------
+
+set cursorline
+hi Cursor ctermbg=214 guibg=#ffaf00
+hi CursorColumn ctermbg=236 guibg=#2c2c2c
+hi CursorLine ctermbg=239 guibg=#2c2c2c cterm=none gui=none
+
+" only show cursorline in active buffer
+augroup CursorLine
+  au!
+  au VimEnter * setlocal cursorline
+  au WinEnter * setlocal cursorline
+  au BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END
+
+" ------------------------------------------------------------------------------
 " Appearance
 " ------------------------------------------------------------------------------
 
@@ -59,8 +77,6 @@ set ruler " show where you are
 set scrolloff=3 " show context above/below cursorline
 set showtabline=2
 set fillchars+=vert:\ " remove char from split bar (note significant whitespace)
-" GRB: Put useful info in status line
-:set statusline=%<%f%=\ [%1*%M%*%n%R%H]\ %-19(%3l,%02c%03V%)%O'%02b'
 :hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red
 
 " ------------------------------------------------------------------------------
@@ -115,6 +131,10 @@ set wildmode=longest,list,full
 let mapleader = ',' " use ',' as <leader> key
 " ,, to go to last file
 map <leader><leader> <c-^>
+" run flow on current file
+map <leader>f :w\|:!clear; npm run flow %<cr>
+" run eslint on current file
+map <leader>l :w\|:!clear; npm run eslint %<cr>
 
 " ------------------------------------------------------------------------------
 " Custom Functions
