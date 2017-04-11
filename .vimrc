@@ -41,7 +41,11 @@ highlight FoldColumn guifg='#282828' guibg='#282828'
 hi ColorColumn ctermbg='234'
 let &colorcolumn=join(range(81,999),",")
 " invert the statusline for non-focused buffers
-hi StatusLineNC ctermfg=235 ctermbg=15
+hi StatusLineNC ctermfg=240 ctermbg=0
+" tone down the TablineFill background, match with StatusLineNC
+hi TablineFill ctermfg=240
+" match VertSplit to TablineFill, unfocused split
+hi VertSplit ctermfg=240
 
 " ------------------------------------------------------------------------------
 " CursorLine
