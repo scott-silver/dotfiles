@@ -166,3 +166,10 @@ function! RemoveFancyCharacters()
     :exe ":%s/".join(keys(typo), '\|').'/\=typo[submatch(0)]/ge'
 endfunction
 command! RemoveFancyCharacters :call RemoveFancyCharacters()
+
+" map ,r to run `yarn test` on the file that was focused when BindR was called
+fun! BindR()
+  let current_path = expand('%')
+  :exe ":map ,r :w\\|:!clear; yarn test " . current_path . "<cr>"
+endfun
+command! BindR :call BindR()
