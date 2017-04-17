@@ -71,7 +71,6 @@ augroup END
 " ------------------------------------------------------------------------------
 
 syntax enable " enable syntax highlighting
-let g:netrw_liststyle=3 " show editor in tree mode
 set guioptions-=r "remove right-hand scroll bar
 set guioptions-=L "remove left-hand scroll bar
 set laststatus=2 " always show statusline
