@@ -81,7 +81,10 @@ set ruler " show where you are
 set scrolloff=3 " show context above/below cursorline
 set showtabline=2
 set fillchars+=vert:\ " remove char from split bar (note significant whitespace)
-:hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red
+" don't remember what this does:
+hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red
+" display the last invoked command in the bottom right corner
+set showcmd
 
 " ------------------------------------------------------------------------------
 " Bells/Alerts
