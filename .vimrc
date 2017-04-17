@@ -13,7 +13,6 @@ Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
 
 " Ultisnips configuration. Must remain before vundle#end
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -46,6 +45,8 @@ hi StatusLineNC ctermfg=240 ctermbg=0
 hi TablineFill ctermfg=240
 " match VertSplit to TablineFill, unfocused split
 hi VertSplit ctermfg=240
+" for Command-T, make the highlighted text gruvbox green
+hi PmenuSel ctermfg=14
 
 " ------------------------------------------------------------------------------
 " CursorLine
@@ -70,7 +71,6 @@ augroup END
 " ------------------------------------------------------------------------------
 
 syntax enable " enable syntax highlighting
-let g:netrw_liststyle=3 " show editor in tree mode
 set guioptions-=r "remove right-hand scroll bar
 set guioptions-=L "remove left-hand scroll bar
 set laststatus=2 " always show statusline
@@ -81,7 +81,10 @@ set ruler " show where you are
 set scrolloff=3 " show context above/below cursorline
 set showtabline=2
 set fillchars+=vert:\ " remove char from split bar (note significant whitespace)
-:hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red
+" don't remember what this does:
+hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red
+" display the last invoked command in the bottom right corner
+set showcmd
 
 " ------------------------------------------------------------------------------
 " Bells/Alerts
