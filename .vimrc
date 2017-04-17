@@ -45,6 +45,8 @@ hi StatusLineNC ctermfg=240 ctermbg=0
 hi TablineFill ctermfg=240
 " match VertSplit to TablineFill, unfocused split
 hi VertSplit ctermfg=240
+" for Command-T, make the highlighted text gruvbox green
+hi PmenuSel ctermfg=14
 
 " ------------------------------------------------------------------------------
 " CursorLine
