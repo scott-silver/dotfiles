@@ -345,3 +345,4 @@ you should place your code here."
 ;; map esc in normal mode to clear search highlighting
 ;; change tab width to 2 space
 ;; set line numbers on by default
+;; map :Ex to open file explorer
