@@ -313,6 +313,8 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "C-z") 'suspend-frame)
   (define-key evil-insert-state-map (kbd "C-c") 'evil-normal-state)
   (define-key evil-normal-state-map (kbd ", t") 'helm-projectile-find-file)
+  (define-key evil-normal-state-map (kbd "g t") 'persp-next)
+  (define-key evil-normal-state-map (kbd "g T") 'persp-prev)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -342,3 +344,4 @@ you should place your code here."
 ;; add code snippets (https://jaketrent.com/post/code-snippets-spacemacs/)
 ;; map esc in normal mode to clear search highlighting
 ;; change tab width to 2 space
+;; set line numbers on by default
