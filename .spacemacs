@@ -332,3 +332,13 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  )
 
+;; TODO:
+;; switch to gruvbox theme
+;; create ,p alias to run prettier
+;; create ,l alias to run elint
+;; create ,f alias to run flow
+;; map :tabe to open a new window
+;; map C-w x to swap buffers
+;; add code snippets (https://jaketrent.com/post/code-snippets-spacemacs/)
+;; map esc in normal mode to clear search highlighting
+;; change tab width to 2 space
