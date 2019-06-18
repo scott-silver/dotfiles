@@ -260,7 +260,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers t
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -315,6 +315,8 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd ", t") 'helm-projectile-find-file)
   (define-key evil-normal-state-map (kbd "g t") 'persp-next)
   (define-key evil-normal-state-map (kbd "g T") 'persp-prev)
+  (push '("\\.js\\'" . js-mode) auto-mode-alist) ;; syntax highlighting for .js files
+  (push '("\\.jsx\\'" . js-mode) auto-mode-alist) ;; syntax highlighting for .jsx files
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -344,5 +346,5 @@ you should place your code here."
 ;; add code snippets (https://jaketrent.com/post/code-snippets-spacemacs/)
 ;; map esc in normal mode to clear search highlighting
 ;; change tab width to 2 space
-;; set line numbers on by default
 ;; map :Ex to open file explorer
+;; figure out how to yank to clipboard
