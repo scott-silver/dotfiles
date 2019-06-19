@@ -317,6 +317,9 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "g T") 'persp-prev)
   (push '("\\.js\\'" . js-mode) auto-mode-alist) ;; syntax highlighting for .js files
   (push '("\\.jsx\\'" . js-mode) auto-mode-alist) ;; syntax highlighting for .jsx files
+  (setq-default js-indent-level 2) ;; indent, pt. 1
+  (setq-default js2-basic-offset 2) ;; indent, pt. 2
+  (setq-default standard-indent 2) ;; indent, pt. 3
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -336,7 +339,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  )
 
-;; TODO:
+;; TODO: (https://github.com/telekid/spacemacs-fp/blob/master/init.el)
 ;; switch to gruvbox theme
 ;; create ,p alias to run prettier
 ;; create ,l alias to run elint
@@ -345,6 +348,9 @@ you should place your code here."
 ;; map C-w x to swap buffers
 ;; add code snippets (https://jaketrent.com/post/code-snippets-spacemacs/)
 ;; map esc in normal mode to clear search highlighting
-;; change tab width to 2 space
 ;; map :Ex to open file explorer
 ;; figure out how to yank to clipboard
+;; figure out how to grep from the spacemacs command prompt
+;; disable smartparens
+;; figure out how to define key-bindings that work on the home screen, too
+;; customize the powerline to include full path name
