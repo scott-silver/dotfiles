@@ -320,6 +320,10 @@ you should place your code here."
   (setq-default js-indent-level 2) ;; indent, pt. 1
   (setq-default js2-basic-offset 2) ;; indent, pt. 2
   (setq-default standard-indent 2) ;; indent, pt. 3
+  ;; enable yanking and pasting to system clipboard on macOS in terminal
+  ;; https://github.com/joddie/osx-clipboard-mode
+  (load-file "~/.emacs.d/private/local/osx-clipboard.el") 
+  (osx-clipboard-mode +1)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -349,7 +353,6 @@ you should place your code here."
 ;; add code snippets (https://jaketrent.com/post/code-snippets-spacemacs/)
 ;; map esc in normal mode to clear search highlighting
 ;; map :Ex to open file explorer
-;; figure out how to yank to clipboard
 ;; figure out how to grep from the spacemacs command prompt
 ;; disable smartparens
 ;; figure out how to define key-bindings that work on the home screen, too
