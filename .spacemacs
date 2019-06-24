@@ -321,10 +321,6 @@ you should place your code here."
   (setq-default js-indent-level 2) ;; indent, pt. 1
   (setq-default js2-basic-offset 2) ;; indent, pt. 2
   (setq-default standard-indent 2) ;; indent, pt. 3
-  ;; enable yanking and pasting to system clipboard on macOS in terminal
-  ;; https://github.com/joddie/osx-clipboard-mode
-  (load-file "~/.emacs.d/private/local/osx-clipboard.el") 
-  (osx-clipboard-mode +1)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
