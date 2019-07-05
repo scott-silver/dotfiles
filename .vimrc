@@ -9,10 +9,11 @@ set rtp+=~/.vim/bundle/Vundle.vim " set the runtime path to include Vundle
 call vundle#begin() " initialize Vundle
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fireplace'
+Plugin 'nixprime/cpsm'
 
 " Ultisnips configuration. Must remain before vundle#end
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -30,6 +31,16 @@ let g:CommandTTraverseSCM = 'pwd' " set file directory to present working
 " Gitgutter. Reduce updatetime so that git-gutter moves faster
 set updatetime=250
 
+" CtrlP configuration
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+" use custom matcher ("cpsm")
+let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
+" set no max limit on the number of files to search in
+let g:ctrlp_max_files=0
+" let g:ctrlp_show_hidden = 1
+let g:ctrlp_switch_buffer=0
+" ignore files in .gitignore https://github.com/kien/ctrlp.vim/issues/174#issuecomment-49747252
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 " ------------------------------------------------------------------------------
 " Colors
 " ------------------------------------------------------------------------------
@@ -139,9 +150,16 @@ let mapleader = ',' " use ',' as <leader> key
 " ,, to go to last file
 map <leader><leader> <c-^>
 " run flow on current file
-map <leader>f :w\|:!clear; npm run flow %<cr>
+map <leader>f :w\|:!clear; yarn run flow %<cr>
 " run eslint on current file
-map <leader>l :w\|:!clear; npm run eslint %<cr>
+map <leader>l :w\|:!clear; yarn run eslint %<cr>
+" run prettier on current file
+map <leader>p :w\|:!clear; yarn run prettier -- % --write<cr>
+" print flow type of object under cursor
+map <leader>g :exec "!yarn run flow type-at-pos " . expand("%") . " " . line(".") . " " . col(".")<cr>
+
+map <leader>t :CtrlP<cr>
+map <leader>b :CtrlPBuffer<cr>
 
 " ------------------------------------------------------------------------------
 " Custom Functions
