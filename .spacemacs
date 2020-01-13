@@ -306,8 +306,7 @@ It is called immediately after `dotspacemacs/init', before layer configuration
 executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
-`dotspacemacs/user-config' first."
-  )
+`dotspacemacs/user-config' first.")
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -321,6 +320,8 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "g t") 'persp-next)
   (define-key evil-normal-state-map (kbd "g T") 'persp-prev)
   (define-key evil-normal-state-map (kbd "C-l") 'redraw-display)
+  (define-key evil-normal-state-map (kbd "C-w C-l") 'evil-window-right)
+  (define-key evil-normal-state-map (kbd "C-w C-h") 'evil-window-left)
   (push '("\\.js\\'" . js-mode) auto-mode-alist) ;; syntax highlighting for .js files
   (push '("\\.jsx\\'" . js-mode) auto-mode-alist) ;; syntax highlighting for .jsx files
   (setq-default js-indent-level 2) ;; indent, pt. 1
