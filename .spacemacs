@@ -318,15 +318,14 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (define-key evil-normal-state-map (kbd "C-z") 'suspend-frame)
   (define-key evil-insert-state-map (kbd "C-c") 'evil-normal-state)
-  (define-key evil-normal-state-map (kbd ", t") 'helm-projectile-find-file)
   (define-key evil-normal-state-map (kbd "g t") 'persp-next)
   (define-key evil-normal-state-map (kbd "g T") 'persp-prev)
+  (define-key evil-normal-state-map (kbd "C-l") 'redraw-display)
   (push '("\\.js\\'" . js-mode) auto-mode-alist) ;; syntax highlighting for .js files
   (push '("\\.jsx\\'" . js-mode) auto-mode-alist) ;; syntax highlighting for .jsx files
   (setq-default js-indent-level 2) ;; indent, pt. 1
   (setq-default js2-basic-offset 2) ;; indent, pt. 2
-  (setq-default standard-indent 2) ;; indent, pt. 3
-  )
+  (setq-default standard-indent 2)) ;; indent, pt. 3
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
