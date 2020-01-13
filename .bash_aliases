@@ -2,6 +2,7 @@
 
 alias be="bundle exec"
 alias la="ls -a"
+alias reindex_spotlight="sudo mdutil -E /"
 
 # ==============================================================================
 # chrome
