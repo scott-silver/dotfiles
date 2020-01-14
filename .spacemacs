@@ -29,6 +29,14 @@ values."
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
+   ;;  auto-completion
+   ;;  better-defaults
+   ;;  org
+   ;;  (shell :variables
+   ;;         shell-default-height 30
+   ;;         shell-default-position 'bottom)
+   ;;  spell-checking
+   ;;  syntax-checking
    dotspacemacs-configuration-layers
    '(clojure
      emacs-lisp
@@ -38,22 +46,14 @@ values."
      markdown
      parinfer
      restclient
-     shell
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom)
      sql
      themes-megapack
      (version-control :variables
                       version-control-diff-tool 'git-gutter
-                      version-control-diff-side 'left)
-     ;; auto-completion
-     ;; better-defaults
-     ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     ;; spell-checking
-     ;; syntax-checking
-     )
-   
+                      version-control-diff-side 'left))
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
@@ -316,7 +316,6 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (define-key evil-normal-state-map (kbd "C-z") 'suspend-frame)
   (define-key evil-insert-state-map (kbd "C-c") 'evil-normal-state)
   (define-key evil-normal-state-map (kbd "g t") 'persp-next)
   (define-key evil-normal-state-map (kbd "g T") 'persp-prev)
