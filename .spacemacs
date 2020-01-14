@@ -354,7 +354,6 @@ you should place your code here."
  )
 
 ;; TODO: (https://github.com/telekid/spacemacs-fp/blob/master/init.el)
-;; switch to gruvbox theme
 ;; create ,p alias to run prettier
 ;; create ,l alias to run elint
 ;; create ,f alias to run flow
