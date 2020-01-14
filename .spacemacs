@@ -327,7 +327,8 @@ you should place your code here."
   (push '("\\.jsx\\'" . js-mode) auto-mode-alist) ;; syntax highlighting for .jsx files
   (setq-default js-indent-level 2) ;; indent, pt. 1
   (setq-default js2-basic-offset 2) ;; indent, pt. 2
-  (setq-default standard-indent 2)) ;; indent, pt. 3
+  (setq-default standard-indent 2) ;; indent, pt. 3
+  (add-hook 'cider-repl-mode-hook '(lambda () (setq scroll-conservatively 101))))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
