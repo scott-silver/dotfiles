@@ -14,6 +14,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-fireplace'
 Plugin 'nixprime/cpsm'
+Plugin 'sillybun/vim-repl'
 
 " Ultisnips configuration. Must remain before vundle#end
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -24,12 +25,20 @@ call vundle#end() " required
 filetype plugin indent on
 
 " Command-T configuration
-let g:CommandTTraverseSCM = 'pwd' " set file directory to present working
+" let g:CommandTTraverseSCM = 'pwd' " set file directory to present working
 " directory (default setting looks for a git directory, which causes issues
 " when working in large, shared repos
 
+" add folders to ignore
+let g:CommandTWildIgnore=&wildignore . ",*/node_modules,*/coverage"
+
+" use `e` in place of `CommandTOpen`, so a new buffer is opened, even if the
+" file is already open in another split
+let g:CommandTAcceptSelectionCommand = 'e'
+
 " Gitgutter. Reduce updatetime so that git-gutter moves faster
-set updatetime=250
+" set updatetime=250
+let g:gitgutter_async = 0
 
 " CtrlP configuration
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -49,7 +58,7 @@ set background=dark
 highlight FoldColumn guifg='#282828' guibg='#282828'
 " add light gray color column from line 81 on
 hi ColorColumn ctermbg='234'
-let &colorcolumn=join(range(81,999),",")
+let &colorcolumn=join(range(81,9999),",")
 " invert the statusline for non-focused buffers
 hi StatusLineNC ctermfg=240 ctermbg=0
 " tone down the TablineFill background, match with StatusLineNC
@@ -58,6 +67,8 @@ hi TablineFill ctermfg=240
 hi VertSplit ctermfg=240
 " for Command-T, make the highlighted text gruvbox green
 hi PmenuSel ctermfg=14
+" disable ale highlighting
+let g:ale_set_highlights = 0
 
 " ------------------------------------------------------------------------------
 " CursorLine
@@ -143,6 +154,24 @@ set wildmenu
 set wildmode=longest,list,full
 
 "-------------------------------------------------------------------------------
+" Mouse
+" ------------------------------------------------------------------------------
+
+" disable all scroll wheel actions
+nmap <ScrollWheelUp> <nop>
+nmap <S-ScrollWheelUp> <nop>
+nmap <C-ScrollWheelUp> <nop>
+nmap <ScrollWheelDown> <nop>
+nmap <S-ScrollWheelDown> <nop>
+nmap <C-ScrollWheelDown> <nop>
+nmap <ScrollWheelLeft> <nop>
+nmap <S-ScrollWheelLeft> <nop>
+nmap <C-ScrollWheelLeft> <nop>
+nmap <ScrollWheelRight> <nop>
+nmap <S-ScrollWheelRight> <nop>
+nmap <C-ScrollWheelRight> <nop>
+
+"-------------------------------------------------------------------------------
 " Custom Key Mappings
 " ------------------------------------------------------------------------------
 
@@ -174,6 +203,8 @@ endfun
 " call TrimWhiteSpace on file write
 autocmd BufWritePre * :call TrimWhitespace()
 
+" au BufWritePost *.jsx silent! execute "!yarn run prettier -- % --write >/dev/null 2>&1"
+
 " borrowed from gary bernhardt
 function! RemoveFancyCharacters()
     let typo = {}
@@ -194,3 +225,55 @@ fun! BindR()
   :exe ":map ,r :w\\|:!clear; yarn test " . current_path . "<cr>"
 endfun
 command! BindR :call BindR()
+
+fun! OpenSplits()
+  :vs
+endfun
+
+autocmd VimEnter * :call OpenSplits()
+
+" let target_terminal='/dev/ttys005'
+"silent execute "!yarn run flow " . expand("%") . " | write scottsilver " . target_terminal
+
+
+
+
+" let tmux = 0
+"
+" function! RunEslint(tmux)
+"   if tmux
+"     :exe ":!echo tmux is true"
+"   else
+"     :exe ":!echo tmux is false"
+"   endif
+" endfunction
+"
+" map <leader>l :call RunEslint(g:tmux)<cr>
+
+
+
+" Asynchronous Lint Engine (ALE)
+" Limit linters used for JavaScript.
+let g:ale_linters = {
+\  'javascript': ['flow']
+\}
+" Only run linters named in ale_linters settings.
+let g:ale_linters_explicit = 1
+
+highlight clear ALEErrorSign " otherwise uses error bg color (typically red)
+highlight clear ALEWarningSign " otherwise uses error bg color (typically red)
+let g:ale_sign_error = 'X' " could use emoji
+let g:ale_sign_warning = '?' " could use emoji
+let g:ale_statusline_format = ['X %d', '? %d', '']
+let g:ale_sign_column_always = 1
+" %linter% is the name of the linter that provided the message
+" %s is the error or warning message
+let g:ale_echo_msg_format = '%linter% says %s'
+" Map keys to navigate between lines with errors and warnings.
+nnoremap <leader>an :ALENextWrap<cr>
+nnoremap <leader>ap :ALEPreviousWrap<cr>
+
+" this fixes the regex for ruby file syntax highlighting
+set re=1
+
+let g:omni_sql_no_default_maps = 1
