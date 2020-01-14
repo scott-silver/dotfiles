@@ -331,7 +331,9 @@ you should place your code here."
    js2-basic-offset 2
    standard-indent 2
    spaceline-buffer-encoding-abbrev-p nil
-   spaceline-buffer-position-p nil)
+   spaceline-buffer-position-p nil
+   spaceline-selection-info-p nil
+   spaceline-buffer-size-p nil)
   (add-hook 'cider-repl-mode-hook '(lambda () (setq scroll-conservatively 101)))) ;; keep the cider-repl output at the bottom of the screen
 
 ;; Do not write anything past this comment. This is where Emacs will
