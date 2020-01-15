@@ -329,6 +329,7 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "C-w C-h") 'evil-window-left)
   (define-key evil-normal-state-map (kbd "C-w x") 'window-swap-states) ;; mimic vim buffer swap
   (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop) ;; make tabs work as expected
+  (evil-ex-define-cmd "Ex" 'treemacs) ;; mimic vim :Ex => Netrw command
   (push '("\\.js\\'" . js-mode) auto-mode-alist) ;; syntax highlighting for .js files
   (push '("\\.jsx\\'" . js-mode) auto-mode-alist) ;; syntax highlighting for .jsx files
   (setq-default
@@ -370,7 +371,6 @@ you should place your code here."
 ;; map :tabe to open a new window
 ;; add code snippets (https://jaketrent.com/post/code-snippets-spacemacs/)
 ;; map esc in normal mode to clear search highlighting
-;; map :Ex to open file explorer
 ;; figure out how to grep from the spacemacs command prompt
 ;; disable smartparens
 ;; figure out how to define key-bindings that work on the home screen, too
