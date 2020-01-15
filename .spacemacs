@@ -372,6 +372,5 @@ you should place your code here."
 ;; add code snippets (https://jaketrent.com/post/code-snippets-spacemacs/)
 ;; map esc in normal mode to clear search highlighting
 ;; figure out how to grep from the spacemacs command prompt
-;; disable smartparens
 ;; figure out how to define key-bindings that work on the home screen, too
 ;; customize the powerline to include full path name
