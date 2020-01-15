@@ -331,6 +331,10 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "C-w C-l") 'evil-window-right)
   (define-key evil-normal-state-map (kbd "C-w C-h") 'evil-window-left)
   (define-key evil-normal-state-map (kbd "C-w x") 'window-swap-states) ;; mimic vim buffer swap
+  ;; global key bindings
+  (global-set-key (kbd "C-s-f") 'toggle-frame-fullscreen) ;; Ctrl-Cmd-f -> toggle fullscreen
+  (global-set-key (kbd "<C-s-268632070>") 'toggle-frame-fullscreen) ;; Emacs sometimes registers C-s-f as this weird keycode
+  ;; commands
   (evil-ex-define-cmd "Ex" 'treemacs) ;; mimic vim :Ex => Netrw command
   (push '("\\.js\\'" . js-mode) auto-mode-alist) ;; syntax highlighting for .js files
   (push '("\\.jsx\\'" . js-mode) auto-mode-alist) ;; syntax highlighting for .jsx files
@@ -370,11 +374,11 @@ you should place your code here."
 ;;   SPC / -> search in project
 ;;   https://github.com/telekid/spacemacs-fp/blob/master/init.el
 
-;; TODO: 
+;; TODO:
 ;; create ,p alias to run prettier
 ;; create ,l alias to run elint
 ;; create ,f alias to run flow
 ;; map :tabe to open a new window
-;; add code snippets (https://jaketrent.com/post/code-snippets-spacemacs/)
+;; add code snippets https://jaketrent.com/post/code-snippets-spacemacs/
 ;; figure out how to define key-bindings that work on the home screen, too
 ;; customize the powerline to include full path name
