@@ -37,6 +37,7 @@ values."
    ;;         shell-default-position 'bottom)
    ;;  spell-checking
    ;;  syntax-checking
+   ;;  prettier
    dotspacemacs-configuration-layers
    '(clojure
      emacs-lisp
