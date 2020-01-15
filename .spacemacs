@@ -327,6 +327,7 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "C-l") 'redraw-display)
   (define-key evil-normal-state-map (kbd "C-w C-l") 'evil-window-right)
   (define-key evil-normal-state-map (kbd "C-w C-h") 'evil-window-left)
+  (define-key evil-normal-state-map (kbd "C-w x") 'window-swap-states) ;; mimic vim buffer swap
   (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop) ;; make tabs work as expected
   (push '("\\.js\\'" . js-mode) auto-mode-alist) ;; syntax highlighting for .js files
   (push '("\\.jsx\\'" . js-mode) auto-mode-alist) ;; syntax highlighting for .jsx files
