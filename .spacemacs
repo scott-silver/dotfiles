@@ -136,6 +136,9 @@ values."
                          doom-one
                          solarized-gruvbox-dark
                          solarized-zenburn
+                         doom-gruvbox
+                         darktooth
+                         sanityinc-tomorrow-night
                          spacemacs-dark)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
