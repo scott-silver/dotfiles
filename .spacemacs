@@ -133,7 +133,8 @@ values."
    dotspacemacs-themes '(gruvbox-dark-soft
                          darktooth
                          doom-one
-                         gruvbox
+                         solarized-gruvbox-dark
+                         solarized-zenburn
                          spacemacs-dark)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -332,6 +333,7 @@ you should place your code here."
    spaceline-buffer-encoding-abbrev-p nil
    spaceline-buffer-position-p nil
    spaceline-selection-info-p nil
+   spaceline-line-column-p nil
    spaceline-buffer-size-p nil)
   (add-hook 'cider-repl-mode-hook '(lambda () (setq scroll-conservatively 101)))) ;; keep the cider-repl output at the bottom of the screen
 
