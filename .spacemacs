@@ -321,17 +321,20 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  ;; insert state keybindings
   (define-key evil-insert-state-map (kbd "C-c") 'evil-normal-state)
+  (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop) ;; make tabs work as expected
+  ;; normal state keybindings
   (define-key evil-normal-state-map (kbd "g t") 'persp-next)
   (define-key evil-normal-state-map (kbd "g T") 'persp-prev)
   (define-key evil-normal-state-map (kbd "C-l") 'redraw-display)
   (define-key evil-normal-state-map (kbd "C-w C-l") 'evil-window-right)
   (define-key evil-normal-state-map (kbd "C-w C-h") 'evil-window-left)
   (define-key evil-normal-state-map (kbd "C-w x") 'window-swap-states) ;; mimic vim buffer swap
-  (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop) ;; make tabs work as expected
   (evil-ex-define-cmd "Ex" 'treemacs) ;; mimic vim :Ex => Netrw command
   (push '("\\.js\\'" . js-mode) auto-mode-alist) ;; syntax highlighting for .js files
   (push '("\\.jsx\\'" . js-mode) auto-mode-alist) ;; syntax highlighting for .jsx files
+
   (setq-default
    ;; indentation
    js-indent-level 2
@@ -370,7 +373,6 @@ you should place your code here."
 ;; create ,f alias to run flow
 ;; map :tabe to open a new window
 ;; add code snippets (https://jaketrent.com/post/code-snippets-spacemacs/)
-;; map esc in normal mode to clear search highlighting
 ;; figure out how to grep from the spacemacs command prompt
 ;; figure out how to define key-bindings that work on the home screen, too
 ;; customize the powerline to include full path name
