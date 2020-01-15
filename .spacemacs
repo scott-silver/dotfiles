@@ -332,9 +332,13 @@ you should place your code here."
   (push '("\\.js\\'" . js-mode) auto-mode-alist) ;; syntax highlighting for .js files
   (push '("\\.jsx\\'" . js-mode) auto-mode-alist) ;; syntax highlighting for .jsx files
   (setq-default
+   ;; indentation
    js-indent-level 2
    js2-basic-offset 2
    standard-indent 2
+   ;; speed up projectile with caching
+   projectile-enable-caching t
+   ;; spaceline customization
    spaceline-buffer-encoding-abbrev-p nil
    spaceline-buffer-position-p nil
    spaceline-selection-info-p nil
@@ -364,7 +368,6 @@ you should place your code here."
 ;; create ,l alias to run elint
 ;; create ,f alias to run flow
 ;; map :tabe to open a new window
-;; map C-w x to swap buffers
 ;; add code snippets (https://jaketrent.com/post/code-snippets-spacemacs/)
 ;; map esc in normal mode to clear search highlighting
 ;; map :Ex to open file explorer
