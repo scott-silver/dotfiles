@@ -346,6 +346,8 @@ you should place your code here."
    standard-indent 2
    ;; speed up projectile with caching
    projectile-enable-caching t
+   ;; use file path as buffer id in modeline
+   mode-line-buffer-identification '(:eval (file-relative-name buffer-file-name (projectile-project-root)))
    ;; spaceline customization
    spaceline-buffer-encoding-abbrev-p nil
    spaceline-buffer-position-p nil
