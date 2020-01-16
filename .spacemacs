@@ -353,6 +353,7 @@ you should place your code here."
    spaceline-buffer-position-p nil
    spaceline-selection-info-p nil
    spaceline-line-column-p nil
+   spaceline-purpose-p nil
    spaceline-buffer-size-p nil)
   (add-hook 'cider-repl-mode-hook '(lambda () (setq scroll-conservatively 101)))) ;; keep the cider-repl output at the bottom of the screen
 
