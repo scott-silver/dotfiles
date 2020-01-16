@@ -358,7 +358,12 @@ you should place your code here."
   ;; spaceline-purpose-p nil
   ;; spaceline-buffer-size-p nil)
   ;; custom spaceline:
-  (spaceline-compile '(buffer-id :priority 2) '(version-control :when active :priority 1))
+  (spaceline-compile '(buffer-id) '(version-control))
+
+  ;; hide fringe line-wrap icons
+  ;; https://stackoverflow.com/a/26824463
+  (define-fringe-bitmap 'right-curly-arrow [])
+  (define-fringe-bitmap 'left-curly-arrow [])
 
   (add-hook 'cider-repl-mode-hook '(lambda () (setq scroll-conservatively 101)))) ;; keep the cider-repl output at the bottom of the screen
 
