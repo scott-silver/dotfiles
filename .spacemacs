@@ -378,7 +378,4 @@ you should place your code here."
 ;; create ,p alias to run prettier
 ;; create ,l alias to run elint
 ;; create ,f alias to run flow
-;; map :tabe to open a new window
-;; add code snippets https://jaketrent.com/post/code-snippets-spacemacs/
-;; figure out how to define key-bindings that work on the home screen, too
 ;; customize the powerline to include full path name
