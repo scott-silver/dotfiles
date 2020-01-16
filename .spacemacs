@@ -381,4 +381,3 @@ you should place your code here."
 ;; create ,p alias to run prettier
 ;; create ,l alias to run elint
 ;; create ,f alias to run flow
-;; customize the powerline to include full path name
