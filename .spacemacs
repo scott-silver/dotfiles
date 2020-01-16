@@ -349,14 +349,17 @@ you should place your code here."
    ;; speed up projectile with caching
    projectile-enable-caching t
    ;; use file path as buffer id in modeline
-   mode-line-buffer-identification '(:eval (file-relative-name buffer-file-name (projectile-project-root)))
-   ;; spaceline customization
-   spaceline-buffer-encoding-abbrev-p nil
-   spaceline-buffer-position-p nil
-   spaceline-selection-info-p nil
-   spaceline-line-column-p nil
-   spaceline-purpose-p nil
-   spaceline-buffer-size-p nil)
+   mode-line-buffer-identification '(:eval (file-relative-name buffer-file-name (projectile-project-root))))
+  ;; spaceline customization
+  ;; spaceline-buffer-encoding-abbrev-p nil
+  ;; spaceline-buffer-position-p nil
+  ;; spaceline-selection-info-p nil
+  ;; spaceline-line-column-p nil
+  ;; spaceline-purpose-p nil
+  ;; spaceline-buffer-size-p nil)
+  ;; custom spaceline:
+  (spaceline-compile '(buffer-id :priority 2) '(version-control :when active :priority 1))
+
   (add-hook 'cider-repl-mode-hook '(lambda () (setq scroll-conservatively 101)))) ;; keep the cider-repl output at the bottom of the screen
 
 ;; Do not write anything past this comment. This is where Emacs will
