@@ -139,6 +139,8 @@ values."
                          doom-gruvbox
                          darktooth
                          sanityinc-tomorrow-night
+                         doom-tomorrow-night
+                         chocolate
                          spacemacs-dark)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
