@@ -54,4 +54,13 @@ export -f gpr
 # ==============================================================================
 
 # use macvim in terminal
-alias vim="mvim -v"
+# alias vim="mvim -v"
+
+# ==============================================================================
+# flexport aliases
+# ==============================================================================
+
+#flexport backend
+# use 'foreman start -f Procfile.dev' if you want delayed job and mailhog to work
+# otherwise, use 'bundle exec rails server thin -p 3000' if you want byebug to work
+alias fb='bundle exec rails server thin -p 3000'
