@@ -360,6 +360,8 @@ you should place your code here."
   ;; https://stackoverflow.com/a/26824463
   (define-fringe-bitmap 'right-curly-arrow [])
   (define-fringe-bitmap 'left-curly-arrow [])
+  ;; make the fringes 2 pixels each
+  (fringe-mode '(2 . 2))
 
   (add-hook 'cider-repl-mode-hook '(lambda () (setq scroll-conservatively 101)))) ;; keep the cider-repl output at the bottom of the screen
 
