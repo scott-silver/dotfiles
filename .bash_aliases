@@ -57,10 +57,40 @@ export -f gpr
 # alias vim="mvim -v"
 
 # ==============================================================================
+# aliases
+# ==============================================================================
+
+alias copy_git_branch='git rev-parse --abbrev-ref HEAD | pbcopy'
+
+alias prune_git_branches='git fetch --prune origin'
+
+# open man page in preview (todo: pass in command as arg)
+alias open_in_preview='man -t bash | open -f -a /Applications/Preview.app'
+
+# https://stackoverflow.com/questions/7975556/how-to-start-postgresql-server-on-mac-os-x
+alias start_postgres='pg_ctl -D /usr/local/var/pos'
+alias restart_postgres='brew services restart postgresql' # https://stackoverflow.com/a/30841396
+
+alias renew_ssh_key='ssh-add'
+
+
+# ==============================================================================
 # flexport aliases
 # ==============================================================================
 
 #flexport backend
 # use 'foreman start -f Procfile.dev' if you want delayed job and mailhog to work
 # otherwise, use 'bundle exec rails server thin -p 3000' if you want byebug to work
+
 alias fb='bundle exec rails server thin -p 3000'
+
+alias flexport_shared='rm -rf node_modules/flexport-shared && cp -r client/shared/ node_modules/flexport-shared'
+
+# server-side rendering aliases
+alias ssr='rm -rf public/packs/ && node --max_old_space_size=8192 ~/flexport/node_modules/.bin/webpack --config ./webpack/config.dev.js && SSR=1 foreman start -f Procfile.dev'
+alias ssr_server='SSR=1 foreman start -f Procfile.dev'
+
+alias kill_server='kill -9 "$(cat /Users/scottsilver/flexport/tmp/pids/server.pid)"'
+
+alias reload_database='./script/devbox.rb load_db --local'
+
