@@ -320,6 +320,19 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first.")
 
+(defun dotspacemacs/run-prettier ()
+  (interactive)
+  (async-shell-command
+   (concat "yarn run prettier --write " (buffer-file-name))))
+
+(defun dotspacemacs/run-eslint ()
+  (interactive)
+  (async-shell-command (concat "yarn run eslint " (buffer-file-name))))
+
+(defun dotspacemacs/run-flow ()
+  (interactive)
+  (async-shell-command (concat "yarn run flow " (buffer-file-name))))
+
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
@@ -331,6 +344,9 @@ you should place your code here."
   (define-key evil-insert-state-map (kbd "C-c") 'evil-normal-state)
   (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop) ;; make tabs work as expected
   ;; normal state keybindings
+  (define-key evil-normal-state-map (kbd ", p") 'dotspacemacs/run-prettier) ;; prettier
+  (define-key evil-normal-state-map (kbd ", l") 'dotspacemacs/run-eslint) ;; eslint
+  (define-key evil-normal-state-map (kbd ", f") 'dotspacemacs/run-flow) ;; flow. these commands might be triggering the `d[elete] without motion` bug
   (define-key evil-normal-state-map (kbd "g t") 'persp-next)
   (define-key evil-normal-state-map (kbd "g T") 'persp-prev)
   (define-key evil-normal-state-map (kbd "C-l") 'redraw-display)
@@ -390,7 +406,10 @@ you should place your code here."
 ;;   https://github.com/telekid/spacemacs-fp/blob/master/init.el
 
 ;; TODO:
-;; create ,p alias to run prettier
-;; create ,l alias to run elint
-;; create ,f alias to run flow
+;; figure out how to get .jsx snippets
+;; scope the prettier, eslint, and flow commands to .js, .jsx and .json files
+;; explore using the prettier layer
+;; see if there are flow and eslint layers
 ;; fill-column-indicator SPC t f
+;; create a Gedit command that calls `magit-find-file-other-window
+;; figure out how to dim spacemacs when not focused; here's how to make things more transparent (set-frame-parameter (selected-frame) 'alpha '(85 . 50))
