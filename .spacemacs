@@ -355,7 +355,7 @@ you should place your code here."
   ;; see if there are flow and eslint layers
   ;; fill-column-indicator SPC t f
   ;; create a Gedit command that calls `magit-find-file-other-window
-  ;; figure out how to dim spacemacs when not focused; here's how to make things more transparent (set-frame-parameter (selected-frame) 'alpha '(85 . 50))
+  ;; figure out how to dim spacemacs when not focused; here's how to make things more transparent (set-frame-parameter (selected-frame) 'alpha '(100 . 70))
 
   ;; insert state keybindings
   (define-key evil-insert-state-map (kbd "C-c") 'evil-normal-state)
@@ -399,6 +399,9 @@ you should place your code here."
   (define-fringe-bitmap 'left-curly-arrow [])
   ;; make the fringes 2 pixels each
   (fringe-mode '(2 . 2))
+
+  ;; dim spacemacs when not focused
+  (set-frame-parameter (selected-frame) 'alpha '(100 . 70))
 
   (add-hook 'cider-repl-mode-hook '(lambda () (setq scroll-conservatively 101)))) ;; keep the cider-repl output at the bottom of the screen
 
