@@ -340,6 +340,23 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  ;; NOTES:
+  ;;   SPC / -> search in project
+  ;;   https://github.com/telekid/spacemacs-fp/blob/master/init.el
+
+  ;; TODO:
+  ;; make the prettier/eslint/flow files write the current file before running the command (write-file)?
+  ;; figure out how to grep within a subdirectory
+  ;; figure out how to force visible line numbers in .http files
+  ;; figure out how to force visible line numbers in .json files
+  ;; figure out how to get .jsx snippets
+  ;; scope the prettier, eslint, and flow commands to .js, .jsx and .json files
+  ;; explore using the prettier layer
+  ;; see if there are flow and eslint layers
+  ;; fill-column-indicator SPC t f
+  ;; create a Gedit command that calls `magit-find-file-other-window
+  ;; figure out how to dim spacemacs when not focused; here's how to make things more transparent (set-frame-parameter (selected-frame) 'alpha '(85 . 50))
+
   ;; insert state keybindings
   (define-key evil-insert-state-map (kbd "C-c") 'evil-normal-state)
   (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop) ;; make tabs work as expected
@@ -400,16 +417,3 @@ you should place your code here."
 ;; If you edit it by hand, you could mess it up, so be careful.
 ;; Your init file should contain only one such instance.
 ;; If there is more than one, they won't work right.
-
-;; NOTES:
-;;   SPC / -> search in project
-;;   https://github.com/telekid/spacemacs-fp/blob/master/init.el
-
-;; TODO:
-;; figure out how to get .jsx snippets
-;; scope the prettier, eslint, and flow commands to .js, .jsx and .json files
-;; explore using the prettier layer
-;; see if there are flow and eslint layers
-;; fill-column-indicator SPC t f
-;; create a Gedit command that calls `magit-find-file-other-window
-;; figure out how to dim spacemacs when not focused; here's how to make things more transparent (set-frame-parameter (selected-frame) 'alpha '(85 . 50))
