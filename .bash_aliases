@@ -73,7 +73,6 @@ alias restart_postgres='brew services restart postgresql' # https://stackoverflo
 
 alias renew_ssh_key='ssh-add'
 
-
 # ==============================================================================
 # flexport aliases
 # ==============================================================================
@@ -94,3 +93,5 @@ alias kill_server='kill -9 "$(cat /Users/scottsilver/flexport/tmp/pids/server.pi
 
 alias reload_database='./script/devbox.rb load_db --local'
 
+# make pull request (with Capital as the team)
+alias mpr="~/flexport/mpr --team=CAPITAL --label=capital"
