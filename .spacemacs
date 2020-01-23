@@ -44,6 +44,7 @@ values."
      git
      helm
      html
+     javascript
      markdown
      parinfer
      restclient
