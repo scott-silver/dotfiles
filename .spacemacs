@@ -323,8 +323,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
 (defun dotspacemacs/run-prettier ()
   (interactive)
-  (async-shell-command
-   (concat "yarn run prettier --write " (buffer-file-name))))
+  (async-shell-command (concat "yarn run prettier --write " (buffer-file-name))))
 
 (defun dotspacemacs/run-eslint ()
   (interactive)
