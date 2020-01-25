@@ -356,10 +356,11 @@ you should place your code here."
   ;; see if there are flow and eslint layers
   ;; fill-column-indicator SPC t f
   ;; create a Gedit command that calls `magit-find-file-other-window
-  ;; figure out how to dim spacemacs when not focused; here's how to make things more transparent (set-frame-parameter (selected-frame) 'alpha '(100 . 70))
   ;; figure out how to jump to file based on file path string in JS
   ;; figure out how to jump to namespace in Clojure
 
+  ;; commands
+  (evil-ex-define-cmd "Ex" 'treemacs) ;; mimic vim :Ex => Netrw command
   ;; insert state keybindings
   (define-key evil-insert-state-map (kbd "C-c") 'evil-normal-state)
   (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop) ;; make tabs work as expected
@@ -382,8 +383,6 @@ you should place your code here."
   ;; global key bindings
   (global-set-key (kbd "C-s-f") 'toggle-frame-fullscreen) ;; Ctrl-Cmd-f -> toggle fullscreen
   (global-set-key (kbd "<C-s-268632070>") 'toggle-frame-fullscreen) ;; Emacs sometimes registers C-s-f as this weird keycode
-  ;; commands
-  (evil-ex-define-cmd "Ex" 'treemacs) ;; mimic vim :Ex => Netrw command
   (push '("\\.js\\'" . js-mode) auto-mode-alist) ;; syntax highlighting for .js files
   (push '("\\.jsx\\'" . js-mode) auto-mode-alist) ;; syntax highlighting for .jsx files
 
