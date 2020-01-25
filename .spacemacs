@@ -279,7 +279,10 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers t
+   dotspacemacs-line-numbers '(:enabled-for-modes prog-mode
+                                                  text-mode
+                                                  restclient-mode
+                                                  json-mode)
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -353,8 +356,6 @@ you should place your code here."
 
   ;; TODO:
   ;;  make the prettier/eslint/flow files write the current file before running the command (write-file)?
-  ;;  figure out how to force visible line numbers in .http files
-  ;;  figure out how to force visible line numbers in .json files
   ;;  figure out how to get .jsx snippets
   ;;  scope the prettier, eslint, and flow commands to .js, .jsx and .json files
   ;;  explore using the prettier layer
