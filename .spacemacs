@@ -355,12 +355,13 @@ you should place your code here."
   ;; explore using the prettier layer
   ;; see if there are flow and eslint layers
   ;; fill-column-indicator SPC t f
-  ;; create a Gedit command that calls `magit-find-file-other-window
   ;; figure out how to jump to file based on file path string in JS
   ;; figure out how to jump to namespace in Clojure
+  ;; add PlantUML path to .spacemacs.env, use it in the plantuml layer definition
 
   ;; commands
   (evil-ex-define-cmd "Ex" 'treemacs) ;; mimic vim :Ex => Netrw command
+  (evil-ex-define-cmd "Gedit" 'magit-find-file) ;; mimic vim-fugitive's Gedit command
   ;; insert state keybindings
   (define-key evil-insert-state-map (kbd "C-c") 'evil-normal-state)
   (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop) ;; make tabs work as expected
