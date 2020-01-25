@@ -342,22 +342,21 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ;; NOTES:
-  ;;   SPC / -> search in project
-  ;;   https://github.com/telekid/spacemacs-fp/blob/master/init.el
+  ;;  SPC / -> search in project
+  ;;  SPC s a f (helm-do-ag) to search within a directory
+  ;;  https://github.com/telekid/spacemacs-fp/blob/master/init.el
 
   ;; TODO:
-  ;; make the prettier/eslint/flow files write the current file before running the command (write-file)?
-  ;; figure out how to grep within a subdirectory
-  ;; figure out how to force visible line numbers in .http files
-  ;; figure out how to force visible line numbers in .json files
-  ;; figure out how to get .jsx snippets
-  ;; scope the prettier, eslint, and flow commands to .js, .jsx and .json files
-  ;; explore using the prettier layer
-  ;; see if there are flow and eslint layers
-  ;; fill-column-indicator SPC t f
-  ;; figure out how to jump to file based on file path string in JS
-  ;; figure out how to jump to namespace in Clojure
-  ;; add PlantUML path to .spacemacs.env, use it in the plantuml layer definition
+  ;;  make the prettier/eslint/flow files write the current file before running the command (write-file)?
+  ;;  figure out how to force visible line numbers in .http files
+  ;;  figure out how to force visible line numbers in .json files
+  ;;  figure out how to get .jsx snippets
+  ;;  scope the prettier, eslint, and flow commands to .js, .jsx and .json files
+  ;;  explore using the prettier layer
+  ;;  see if there are flow and eslint layers
+  ;;  figure out how to jump to file based on file path string in JS
+  ;;  figure out how to jump to namespace in Clojure
+  ;;  add PlantUML path to .spacemacs.env, use it in the plantuml layer definition
 
   ;; commands
   (evil-ex-define-cmd "Ex" 'treemacs) ;; mimic vim :Ex => Netrw command
