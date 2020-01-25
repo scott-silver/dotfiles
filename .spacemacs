@@ -344,6 +344,11 @@ you should place your code here."
   ;; NOTES:
   ;;  SPC / -> search in project
   ;;  SPC s a f (helm-do-ag) to search within a directory
+  ;;
+  ;;  , g g (go to definition) works for both functions and namespaces in
+  ;;  Clojure, so hitting (, g g) on the namespace in a :require argument will
+  ;;  take you to the namespace
+  ;;
   ;;  https://github.com/telekid/spacemacs-fp/blob/master/init.el
 
   ;; TODO:
@@ -355,7 +360,6 @@ you should place your code here."
   ;;  explore using the prettier layer
   ;;  see if there are flow and eslint layers
   ;;  figure out how to jump to file based on file path string in JS
-  ;;  figure out how to jump to namespace in Clojure
   ;;  add PlantUML path to .spacemacs.env, use it in the plantuml layer definition
 
   ;; commands
