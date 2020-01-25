@@ -48,6 +48,7 @@ values."
      markdown
      parinfer
      restclient
+     ruby
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
@@ -356,6 +357,8 @@ you should place your code here."
   ;; fill-column-indicator SPC t f
   ;; create a Gedit command that calls `magit-find-file-other-window
   ;; figure out how to dim spacemacs when not focused; here's how to make things more transparent (set-frame-parameter (selected-frame) 'alpha '(100 . 70))
+  ;; figure out how to jump to file based on file path string in JS
+  ;; figure out how to jump to namespace in Clojure
 
   ;; insert state keybindings
   (define-key evil-insert-state-map (kbd "C-c") 'evil-normal-state)
@@ -367,8 +370,14 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "g t") 'persp-next)
   (define-key evil-normal-state-map (kbd "g T") 'persp-prev)
   (define-key evil-normal-state-map (kbd "C-l") 'redraw-display)
+
+  ;; if you type too fast, C-w l (move to the window to right) can easily become C-w C-l.
+  ;; these commands ensures that the same command is run either way
+  (define-key evil-normal-state-map (kbd "C-w C-k") 'evil-window-up)
   (define-key evil-normal-state-map (kbd "C-w C-l") 'evil-window-right)
+  (define-key evil-normal-state-map (kbd "C-w C-j") 'evil-window-down)
   (define-key evil-normal-state-map (kbd "C-w C-h") 'evil-window-left)
+
   (define-key evil-normal-state-map (kbd "C-w x") 'window-swap-states) ;; mimic vim buffer swap
   ;; global key bindings
   (global-set-key (kbd "C-s-f") 'toggle-frame-fullscreen) ;; Ctrl-Cmd-f -> toggle fullscreen
