@@ -347,6 +347,8 @@ you should place your code here."
   ;; NOTES:
   ;;  SPC / -> search in project
   ;;  SPC s a f (helm-do-ag) to search within a directory
+  ;;  while viewing a list of files in helm, TAB will preview the file without
+  ;;  closing helm
   ;;
   ;;  , g g (go to definition) works for both functions and namespaces in
   ;;  Clojure, so hitting (, g g) on the namespace in a :require argument will
