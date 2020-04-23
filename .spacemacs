@@ -422,6 +422,9 @@ you should place your code here."
   ;; dim spacemacs when not focused
   (set-frame-parameter (selected-frame) 'alpha '(100 . 70))
 
+  ;; https://emacs.stackexchange.com/questions/33718/is-there-a-function-for-removing-trailing-spaces-in-a-buffer
+  (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
   (add-hook 'cider-repl-mode-hook '(lambda () (setq scroll-conservatively 101)))) ;; keep the cider-repl output at the bottom of the screen
 
 ;; Do not write anything past this comment. This is where Emacs will
