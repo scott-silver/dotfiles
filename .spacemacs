@@ -398,6 +398,10 @@ you should place your code here."
    js-indent-level 2
    js2-basic-offset 2
    standard-indent 2
+
+   ;; https://github.com/Alexander-Miller/treemacs
+   treemacs-sorting 'alphabetic-asc
+
    ;; speed up projectile with caching
    projectile-enable-caching t
    ;; use file path as buffer id in modeline
