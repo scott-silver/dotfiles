@@ -395,6 +395,12 @@ you should place your code here."
   (push '("\\.jsx\\'" . js-mode) auto-mode-alist) ;; syntax highlighting for .jsx files
 
   (setq-default
+   ;; force cider to scroll when there is new output; doesn't seem to work 100%
+   cider-repl-scroll-on-output t
+
+   ;; https://docs.cider.mx/cider/testing/running_tests.html
+   cider-test-show-report-on-success t
+
    ;; indentation
    js-indent-level 2
    js2-basic-offset 2
