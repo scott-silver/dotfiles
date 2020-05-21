@@ -45,7 +45,7 @@ values."
      helm
      html
      javascript
-     markdown
+     (markdown :variables markdown-live-preview-engine 'vmd)
      parinfer
      restclient
      ruby
