@@ -367,8 +367,13 @@ you should place your code here."
   ;;  add PlantUML path to .spacemacs.env, use it in the plantuml layer definition
 
   ;; commands
-  (evil-ex-define-cmd "Ex" 'treemacs) ;; mimic vim :Ex => Netrw command
-  (evil-ex-define-cmd "Gedit" 'magit-find-file) ;; mimic vim-fugitive's Gedit command
+  (evil-ex-define-cmd "Ex" 'treemacs) ;; mimic vim :Ex => Netrw command; change to neotree?
+
+  ;; magit-blame
+  (setq-default magit-blame-echo-style 'margin)
+  (evil-ex-define-cmd "Gedit" 'magit-find-file) ;; mimic vim-fugitive's Gedit command; maybe use magit-find-file-other-window
+  (evil-ex-define-cmd "Gblame" 'magit-blame-echo) ;; mimic vim-fugitive's Gedit command
+
   ;; insert state keybindings
   (define-key evil-insert-state-map (kbd "C-c") 'evil-normal-state)
   (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop) ;; make tabs work as expected
