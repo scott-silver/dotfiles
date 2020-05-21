@@ -56,7 +56,8 @@ values."
      themes-megapack
      (version-control :variables
                       version-control-diff-tool 'git-gutter
-                      version-control-diff-side 'left))
+                      version-control-diff-side 'left)
+     yaml)
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
