@@ -399,6 +399,8 @@ you should place your code here."
   (push '("\\.js\\'" . js-mode) auto-mode-alist) ;; syntax highlighting for .js files
   (push '("\\.jsx\\'" . js-mode) auto-mode-alist) ;; syntax highlighting for .jsx files
 
+  (add-hook 'js2-mode-hook 'react-mode)
+
   (setq-default
    ;; force cider to scroll when there is new output; doesn't seem to work 100%
    cider-repl-scroll-on-output t
@@ -410,6 +412,16 @@ you should place your code here."
    js-indent-level 2
    js2-basic-offset 2
    standard-indent 2
+   ;; css-indent-offset 2
+   ;; web-mode-css-indent-offset 2
+   ;; web-mode-attr-indent-offset 2
+   ;; web-mode-code-indent-offset 2
+   ;; web-mode-markup-indent-offset 2
+
+   ;; Turn off js2 mode errors & warnings
+   ;; https://stackoverflow.com/a/42191610
+   js2-mode-show-parse-errors nil
+   js2-mode-show-strict-warnings nil
 
    ;; https://github.com/Alexander-Miller/treemacs
    treemacs-sorting 'alphabetic-asc
