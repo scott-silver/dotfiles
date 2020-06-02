@@ -136,7 +136,7 @@
  ;; faces
  (
   ;; sci-fi faces
-  ;; (highlight-numbers-number (:foreground sci-fi_blue-2))
+  (highlight-numbers-number                  (:foreground sci-fi_blue-1))
 
   ;; from gruvbox:
   (default                                   (:background gruvbox-bg :foreground gruvbox-light0))
@@ -262,7 +262,7 @@
   (js2-jsdoc-type                            (:background nil :foreground gruvbox-light4))
   (js2-jsdoc-value                           (:background nil :foreground gruvbox-light3))
   (js2-function-param                        (:background nil :foreground gruvbox-bright_aqua))
-  (js2-function-call                         (:background nil :foreground gruvbox-bright_blue))
+  (js2-function-call                         (:background nil :foreground sci-fi_green-4))
   (js2-instance-member                       (:background nil :foreground gruvbox-bright_orange))
   (js2-private-member                        (:background nil :foreground gruvbox-faded_yellow))
   (js2-private-function-call                 (:background nil :foreground gruvbox-faded_aqua))
