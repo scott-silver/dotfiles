@@ -20,15 +20,57 @@
   ;; palettes
   ;; sci-fi colors
 
-  ;; #e4fafd
-  ;; make this even lighter
-  ;; #ebdbb2
   (sci-fi_light-1 "#ebdbb2" nil)
 
-  ;; use the palette generator to crank out 1-10s for the varius colors you need
-  (sci-fi_blue-1 "#70C5BB" nil)
-  (sci-fi_blue-2 "#86C9D3" nil)
+  (sci-fi_grey-0 "#F5F5F4" nil)
+  (sci-fi_grey-1 "#E1E0DF" nil)
+  (sci-fi_grey-2 "#CECBCA" nil)
+  (sci-fi_grey-3 "#BAB7B5" nil)
+  (sci-fi_grey-4 "#A6A2A0" nil)
+  (sci-fi_grey-5 "#928E8B" nil)
+  (sci-fi_grey-6 "#7E7977" nil)
+  (sci-fi_grey-7 "#696563" nil)
+  (sci-fi_grey-8 "#54514F" nil)
+  (sci-fi_grey-9 "#3f3D3B" nil)
+  (sci-fi_grey-10 "#2A2828" nil)
 
+  (sci-fi_blue-0 "#EFF7FA" nil)
+  (sci-fi_blue-1 "#D0E8F1" nil)
+  (sci-fi_blue-2 "#B0D9E8" nil)
+  (sci-fi_blue-3 "#91CADE" nil)
+  (sci-fi_blue-4 "#72BAD5" nil)
+  (sci-fi_blue-5 "#52ABCB" nil)
+  (sci-fi_blue-6 "#3899BC" nil)
+  (sci-fi_blue-7 "#2F809D" nil)
+  (sci-fi_blue-8 "#26667E" nil)
+  (sci-fi_blue-9 "#1C4D5E" nil)
+  (sci-fi_blue-10 "#13333F" nil)
+
+  (sci-fi_turqoise-0 "#F0faf8" nil)
+  (sci-fi_turqoise-1 "#d1efeb" nil)
+  (sci-fi_turqoise-2 "#b3e5de" nil)
+  (sci-fi_turqoise-3 "#95dbd1" nil)
+  (sci-fi_turqoise-4 "#76d0c4" nil)
+  (sci-fi_turqoise-5 "#58c6b7" nil)
+  (sci-fi_turqoise-6 "#3eb6a6" nil)
+  (sci-fi_turqoise-7 "#34988b" nil)
+  (sci-fi_turqoise-8 "#2a7a6f" nil)
+  (sci-fi_turqoise-9 "#1f5b53" nil)
+  (sci-fi_turqoise-10 "#153d37" nil)
+
+  (sci-fi_green-0 "#f1f9f5" nil)
+  (sci-fi_green-1 "#d4ede0" nil)
+  (sci-fi_green-2 "#c5e7d6" nil)
+  (sci-fi_green-3 "#a8dcc1" nil)
+  (sci-fi_green-4 "#8bd0ac" nil)
+  (sci-fi_green-5 "#6ec498" nil)
+  (sci-fi_green-6 "#51b883" nil)
+  (sci-fi_green-7 "#419f6f" nil)
+  (sci-fi_green-8 "#35825b" nil)
+  (sci-fi_green-9 "#296546" nil)
+  (sci-fi_green-10 "#1e4832" nil)
+
+  (sci-fi_bright-green "#23CB76" nil)
 
   ;; gruvbox colors
   (gruvbox-dark0_hard      "#1d2021" "#1c1c1c")
@@ -115,11 +157,11 @@
   ;; Built-in syntax
 
   (font-lock-builtin-face                            (:foreground gruvbox-bright_orange))
-  (font-lock-constant-face                           (:foreground sci-fi_blue-2))
+  (font-lock-constant-face                           (:foreground sci-fi_blue-3))
   (font-lock-comment-face                            (:foreground gruvbox-dark4))
   (font-lock-function-name-face                      (:foreground sci-fi_light-1))
-  (font-lock-keyword-face                            (:foreground sci-fi_blue-2))
-  (font-lock-string-face                             (:foreground sci-fi_blue-1))
+  (font-lock-keyword-face                            (:foreground sci-fi_blue-3))
+  (font-lock-string-face                             (:foreground sci-fi_turqoise-3))
   (font-lock-variable-name-face                      (:foreground gruvbox-bright_blue))
   (font-lock-type-face                               (:foreground gruvbox-bright_purple))
   (font-lock-warning-face                            (:foreground gruvbox-bright_red :bold t))
@@ -527,7 +569,7 @@
 
   ;; git-gutter
   (git-gutter:modified                       (:background gruvbox-faded_blue :foreground gruvbox-faded_blue))
-  (git-gutter:added                          (:background gruvbox-faded_green :foreground gruvbox-faded_green))
+  (git-gutter:added                          (:background sci-fi_green-6 :foreground sci-fi_green-6))
   (git-gutter:deleted                        (:background gruvbox-faded_red :foreground gruvbox-faded_red))
 
   ;; git-gutter+
