@@ -156,7 +156,7 @@
 
   ;; Built-in syntax
 
-  (font-lock-builtin-face                            (:foreground gruvbox-bright_orange))
+  (font-lock-builtin-face                            (:foreground sci-fi_green-4))
   (font-lock-constant-face                           (:foreground sci-fi_blue-3))
   (font-lock-comment-face                            (:foreground gruvbox-dark4))
   (font-lock-function-name-face                      (:foreground sci-fi_light-1))
