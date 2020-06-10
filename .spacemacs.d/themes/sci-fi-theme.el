@@ -20,7 +20,25 @@
   ;; palettes
   ;; sci-fi colors
 
+  ;; TODO:
+  ;; update the js function call color (the open and close parens, it's a depth-4-delimiter)
+  ;; update font-lock-preprocessor-face (it's the orange text when you open spacemacs)
+  ;; update purple text in routes/services.clj
+  ;; see what project.clj looks like
+  ;; see what package.json looks like
+  ;; make javascript imports light grey
+  ;; update green in js function params
+  ;; update the values in sql-postgres mode
+  ;; update module names in ruby files (supplier_type.rb, for example)
+  ;; update `extend` keyword in ruby files (supplier_type.rb, for example)
+  ;; remove purple namespaces (like in supplier/db_fns.clj)
+  ;; update helm-mini recentf files (they're orange)
+  ;; custom "TODO" label (:inherit hl-todo :foreground "#cc9393")
+  ;; consider changing font-lock-doc-face to a dark green, like in the custom-gruvbox-dark-soft theme
+  ;; (clojure-keyword-face (:inherit 'font-lock-keyword-face))
+
   (sci-fi_light-1 "#ebdbb2" nil)
+  (sci-fi_iterm-blue "#87A89B" nil)
 
   (sci-fi_grey-0 "#F5F5F4" nil)
   (sci-fi_grey-1 "#E1E0DF" nil)
@@ -137,6 +155,8 @@
  (
   ;; sci-fi faces
   (highlight-numbers-number                  (:foreground sci-fi_blue-1))
+  (font-lock-doc-face                        (:foreground sci-fi_grey-4))
+  (cider-repl-stdout-face                    (:foreground sci-fi_green-4))
 
   ;; from gruvbox:
   (default                                   (:background gruvbox-bg :foreground gruvbox-light0))
@@ -157,13 +177,13 @@
   ;; Built-in syntax
 
   (font-lock-builtin-face                            (:foreground sci-fi_green-4))
-  (font-lock-constant-face                           (:foreground sci-fi_blue-3))
+  (font-lock-constant-face                           (:foreground sci-fi_green-4))
   (font-lock-comment-face                            (:foreground gruvbox-dark4))
   (font-lock-function-name-face                      (:foreground sci-fi_light-1))
-  (font-lock-keyword-face                            (:foreground sci-fi_blue-3))
-  (font-lock-string-face                             (:foreground sci-fi_turqoise-3))
+  (font-lock-keyword-face                            (:foreground sci-fi_green-2))
+  (font-lock-string-face                             (:foreground sci-fi_light-1))
   (font-lock-variable-name-face                      (:foreground gruvbox-bright_blue))
-  (font-lock-type-face                               (:foreground gruvbox-bright_purple))
+  (font-lock-type-face                               (:foreground sci-fi_light-1))
   (font-lock-warning-face                            (:foreground gruvbox-bright_red :bold t))
 
   ;; Basic faces
@@ -261,7 +281,7 @@
   (js2-jsdoc-tag                             (:background nil :foreground gruvbox-gray))
   (js2-jsdoc-type                            (:background nil :foreground gruvbox-light4))
   (js2-jsdoc-value                           (:background nil :foreground gruvbox-light3))
-  (js2-function-param                        (:background nil :foreground gruvbox-bright_aqua))
+  (js2-function-param                        (:background nil :foreground sci-fi_green-2))
   (js2-function-call                         (:background nil :foreground sci-fi_green-4))
   (js2-instance-member                       (:background nil :foreground gruvbox-bright_orange))
   (js2-private-member                        (:background nil :foreground gruvbox-faded_yellow))
