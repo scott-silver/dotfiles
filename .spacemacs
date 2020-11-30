@@ -47,6 +47,7 @@ values."
      javascript
      (markdown :variables markdown-live-preview-engine 'vmd)
      parinfer
+     react
      restclient
      ruby
      (shell :variables
@@ -410,15 +411,19 @@ you should place your code here."
    ;; https://docs.cider.mx/cider/testing/running_tests.html
    cider-test-show-report-on-success t
 
-   ;; indentation
+   ;; https://docs.cider.mx/cider/usage/dealing_with_errors.html
+   cider-show-error-buffer nil
+
+   ;; js indentation
    js-indent-level 2
    js2-basic-offset 2
    standard-indent 2
-   ;; css-indent-offset 2
-   ;; web-mode-css-indent-offset 2
-   ;; web-mode-attr-indent-offset 2
-   ;; web-mode-code-indent-offset 2
-   ;; web-mode-markup-indent-offset 2
+   ;; css indentation
+   css-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-attr-indent-offset 2
+   web-mode-code-indent-offset 2
+   web-mode-markup-indent-offset 2
 
    ;; Turn off js2 mode errors & warnings
    ;; https://stackoverflow.com/a/42191610
